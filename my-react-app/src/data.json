@@ -1,0 +1,84 @@
+{
+  "navbar": {
+    "brand": "Clean Armenia",
+    "links": [
+      { "name": "Home", "path": "/" },
+      { "name": "About", "path": "/about" },
+      { "name": "Services", "path": "/services" },
+      { "name": "Partners", "path": "/partners" },
+      { "name": "Contact", "path": "/contact" }
+    ]
+  },
+  "hero": {
+    "title": "Professional Office Cleaning in Armenia",
+    "subtitle": "We provide top-quality cleaning services for your business needs",
+    "buttonText": "Get a Quote"
+  },
+  "about": {
+    "title": "About Us",
+    "description1": "Clean Armenia is dedicated to providing exceptional office cleaning services throughout Armenia. With years of experience and a passionate team, we ensure your workspace remains spotless and professional.",
+    "description2": "Our mission is to create healthy, clean environments that boost productivity and leave lasting impressions.",
+    "valuesTitle": "Our Values",
+    "values": [
+      "Quality Service",
+      "Eco-friendly Products",
+      "Professional Team",
+      "Customer Satisfaction"
+    ]
+  },
+  "services": {
+    "title": "Our Services",
+    "items": [
+      {
+        "title": "Daily Cleaning",
+        "description": "Regular office maintenance",
+        "subOptions": [
+          { "title": "Desk Cleaning", "description": "Wiping down desks and surfaces", "path": "/services/daily-cleaning/desk-cleaning" },
+          { "title": "Trash Removal", "description": "Emptying bins and waste management", "path": "/services/daily-cleaning/trash-removal" }
+        ]
+      },
+      {
+        "title": "Deep Cleaning",
+        "description": "Thorough cleaning services",
+        "subOptions": [
+          { "title": "Floor Scrubbing", "description": "Deep cleaning of floors", "path": "/services/deep-cleaning/floor-scrubbing" },
+          { "title": "Upholstery Cleaning", "description": "Cleaning furniture fabrics", "path": "/services/deep-cleaning/upholstery-cleaning" }
+        ]
+      },
+      {
+        "title": "Window Cleaning",
+        "description": "Crystal clear windows",
+        "subOptions": [
+          { "title": "Interior Windows", "description": "Cleaning inside windows", "path": "/services/window-cleaning/interior-windows" },
+          { "title": "Exterior Windows", "description": "Cleaning outside windows", "path": "/services/window-cleaning/exterior-windows" }
+        ]
+      },
+      {
+        "title": "Carpet Cleaning",
+        "description": "Professional carpet care",
+        "subOptions": [
+          { "title": "Steam Cleaning", "description": "Hot water extraction method", "path": "/services/carpet-cleaning/steam-cleaning" },
+          { "title": "Stain Removal", "description": "Targeted stain treatment", "path": "/services/carpet-cleaning/stain-removal" }
+        ]
+      }
+    ]
+  },
+  "partners": {
+    "title": "Our Partners",
+    "items": [
+      { "name": "EcoClean Supplies", "description": "Sustainable cleaning products" },
+      { "name": "Armenian Business Network", "description": "Local business support" },
+      { "name": "GreenTech Solutions", "description": "Eco-friendly tech provider" }
+    ]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "buttonText": "Send Message"
+  },
+  "footer": {
+    "links": [
+      { "name": "Privacy Policy", "path": "#" },
+      { "name": "Terms of Service", "path": "#" }
+    ]
+  }
+}
