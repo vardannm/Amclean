@@ -12,7 +12,6 @@ const resources = {
           home: "Home",
           about: "About",
           services: "Services",
-          partners: "Partners",
           contact: "Contact"
         }
       },

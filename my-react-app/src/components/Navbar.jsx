@@ -65,7 +65,7 @@ const Navbar = () => {
               className="flex items-center space-x-2 text-lg"
             >
               <FaGlobe />
-              <span>{languages.find(lang => lang.code === i18n.language)?.flag || '🌐'}</span>
+              <span>{languages.find(lang => lang.code === i18n.language)?.name}</span>
             </motion.button>
             <AnimatePresence>
               {langOpen && (
@@ -83,7 +83,6 @@ const Navbar = () => {
                       onClick={() => changeLanguage(lang.code)}
                       className="w-full text-left px-4 py-2 hover:bg-[#F6AD55]/20 rounded-md transition-colors flex items-center space-x-2"
                     >
-                      <span>{lang.flag}</span>
                       <span>{lang.name}</span>
                     </button>
                   ))}
