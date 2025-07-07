@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 
 const Partners = () => {
   const { t } = useTranslation();
-
   const partners = t('partners.items', { returnObjects: true });
 
   const sectionVariants = {
@@ -26,11 +25,15 @@ const Partners = () => {
       initial="hidden"
       animate="visible"
       variants={sectionVariants}
-      className="py-16 px-4 bg-[#F7FAFC]"
+      className="relative py-20 px-4"
     >
-      <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-[#1A202C] mb-12 text-center">{t('partners.title')}</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <div className="container mx-auto relative z-10">
+        <h2 className="text-4xl font-extrabold text-center text-[#1A202C] mb-14 tracking-tight">
+          {t('partners.title')}
+        </h2>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {partners.map((partner, index) => (
             <motion.div
               key={partner.name}
@@ -38,9 +41,14 @@ const Partners = () => {
               initial="hidden"
               animate="visible"
               variants={itemVariants}
-              className="bg-[#E2E8F0] p-6 justify-items-center rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              className="bg-white bg-opacity-80 backdrop-blur-md border border-gray-200 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer"
             >
-              <h3 className="text-xl font-semibold text-[#1A202C] mb-2 align-middle">{partner.name}</h3>
+              <h3 className="text-xl font-semibold text-gray-800 mb-1 text-center">
+                {partner.name}
+              </h3>
+              {partner.description && (
+                <p className="text-gray-600 text-sm mt-2 text-center">{partner.description}</p>
+              )}
             </motion.div>
           ))}
         </div>

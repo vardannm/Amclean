@@ -7,17 +7,18 @@ const Services = () => {
   const { t } = useTranslation();
   const [expanded, setExpanded] = useState(null);
 
-
-const services = Object.entries(t('services.items', { returnObjects: true })).map(([key, value]) => ({
-  key,
-  title: value.title,
-  description: value.description,
-  subOptions: Object.entries(value.subOptions).map(([subKey, subValue]) => ({
-    title: subValue.title,
-    description: subValue.description,
-    path: `/services/${key}/${subKey}`, 
-  })),
-}));
+  const services = Object.entries(t('services.items', { returnObjects: true })).map(
+    ([key, value]) => ({
+      key,
+      title: value.title,
+      description: value.description,
+      subOptions: Object.entries(value.subOptions).map(([subKey, subValue]) => ({
+        title: subValue.title,
+        description: subValue.description,
+        path: `/services/${key}/${subKey}`,
+      })),
+    })
+  );
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -35,7 +36,11 @@ const services = Object.entries(t('services.items', { returnObjects: true })).ma
 
   const subOptionVariants = {
     hidden: { opacity: 0, height: 0 },
-    visible: { opacity: 1, height: 'auto', transition: { duration: 0.3 } },
+    visible: {
+      opacity: 1,
+      height: 'auto',
+      transition: { duration: 0.3, ease: 'easeInOut' },
+    },
   };
 
   return (
@@ -43,11 +48,16 @@ const services = Object.entries(t('services.items', { returnObjects: true })).ma
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="py-16 px-4 bg-[#F7FAFC]"
+      className="relative py-20 px-4 "
     >
-      <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-[#1A202C] mb-12 text-center">{t('services.title')}</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Optional background decoration */}
+      
+      <div className="container mx-auto relative z-10">
+        <h2 className="text-4xl font-extrabold text-center text-[#1A202C] mb-14 tracking-tight">
+          {t('services.title')}
+        </h2>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -55,15 +65,13 @@ const services = Object.entries(t('services.items', { returnObjects: true })).ma
               initial="hidden"
               animate="visible"
               variants={itemVariants}
-              className="bg-[#E2E8F0] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              className="bg-white bg-opacity-80 backdrop-blur-md border border-gray-200 p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer"
             >
-              <div
-                className="cursor-pointer"
-                onClick={() => setExpanded(expanded === index ? null : index)}
-              >
-                <h3 className="text-xl font-semibold text-[#1A202C] mb-2">{service.title}</h3>
-                <p className="text-[#718096]">{service.description}</p>
+              <div onClick={() => setExpanded(expanded === index ? null : index)}>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">{service.title}</h3>
+                <p className="text-gray-600 text-sm">{service.description}</p>
               </div>
+
               <AnimatePresence>
                 {expanded === index && (
                   <motion.div
@@ -71,16 +79,18 @@ const services = Object.entries(t('services.items', { returnObjects: true })).ma
                     animate="visible"
                     exit="hidden"
                     variants={subOptionVariants}
-                    className="mt-4 space-y-2"
+                    className="mt-4 space-y-3"
                   >
                     {service.subOptions.map((subOption) => (
                       <Link
                         key={subOption.title}
                         to={subOption.path}
-                        className="block p-2 bg-sky-50 rounded-md hover:bg-sky-100 transition-colors text-[#1A202C]"
+                        className="block p-3 bg-sky-100 bg-opacity-50 border border-sky-200 rounded-lg hover:bg-sky-200 transition duration-200"
                       >
-                        <span className="font-medium">{subOption.title}</span>
-                        <p className="text-sm text-[#718096]">{subOption.description}</p>
+                        <span className="block font-semibold text-[#1A202C] mb-1">
+                          {subOption.title}
+                        </span>
+                        <p className="text-sm text-gray-700">{subOption.description}</p>
                       </Link>
                     ))}
                   </motion.div>

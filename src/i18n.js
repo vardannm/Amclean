@@ -18,7 +18,8 @@ const resources = {
       hero: {
         title: "Professional Office Cleaning in Armenia",
         subtitle: "We provide top-quality cleaning services for your business needs",
-        buttonText: "Get a Quote"
+        buttonText: "Get a Quote",
+        serviceButton: "View our services"
       },
       about: {
         title: "About Us",
@@ -118,7 +119,8 @@ const resources = {
       hero: {
         title: "Հայաստանում գրասենյակների մասնագիտական մաքրություն",
         subtitle: "Մենք տրամադրում ենք բարձրորակ մաքրման ծառայություններ Ձեր բիզնեսի համար",
-        buttonText: "Հաշվարկել արժեքը"
+        buttonText: "Հաշվարկել արժեքը",
+        serviceButton: "Դիտեք մեր ծառայությունները"
       },
       about: {
         title: "Մեր մասին",
@@ -218,7 +220,8 @@ const resources = {
       hero: {
         title: "Профессиональная уборка офисов в Армении",
         subtitle: "Мы предоставляем высококачественные услуги уборки для вашего бизнеса",
-        buttonText: "Рассчитать стоимость"
+        buttonText: "Рассчитать стоимость",
+        serviceButton: "Посмотрите наши услуги"
       },
       about: {
         title: "О нас",
