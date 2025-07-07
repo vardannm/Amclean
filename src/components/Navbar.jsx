@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaGlobe } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import CleanClean from "../assets/CleanClean.png";
+import CleanClean from "../assets/cleanclean.svg";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
