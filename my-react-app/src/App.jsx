@@ -28,6 +28,7 @@ const serviceRoutes = Object.entries(services).flatMap(([serviceKey, service]) =
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Hero />} />
+            <Route path="/partners" element={<Partners/>} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/services" element={<Services />} />

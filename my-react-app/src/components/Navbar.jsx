@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaGlobe } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import CleanClean from "../assets/CleanClean.jpg";
+import CleanClean from "../assets/CleanClean.png";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -34,12 +34,11 @@ const Navbar = () => {
       animate="visible"
       variants={navVariants}
       transition={{ duration: 0.5 }}
-      className="bg-gradient-to-r from-[#2A4365] to-[#38A169] text-white p-4 sticky top-0 z-50 shadow-lg"
+      className="bg-gradient-to-r from-[#01040b] to-[#173473] text-white p-4 sticky top-0 z-50 shadow-lg"
     >
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2 text-2xl font-bold tracking-tight hover:text-[#F6AD55] transition-colors">
-          <img src={CleanClean} alt="Clean Armenia Logo" className="w-8 h-8" />
-          <span>{t('navbar.brand')}</span>
+          <img src={CleanClean} alt="Clean Armenia Logo" className="w-48 h-16" />
         </Link>
 
         <div className="hidden md:flex items-center space-x-8">

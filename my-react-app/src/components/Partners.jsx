@@ -38,10 +38,9 @@ const Partners = () => {
               initial="hidden"
               animate="visible"
               variants={itemVariants}
-              className="bg-[#E2E8F0] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              className="bg-[#E2E8F0] p-6 justify-items-center rounded-lg shadow-md hover:shadow-lg transition-shadow"
             >
-              <h3 className="text-xl font-semibold text-[#1A202C] mb-2">{partner.name}</h3>
-              <p className="text-[#718096]">{partner.description}</p>
+              <h3 className="text-xl font-semibold text-[#1A202C] mb-2 align-middle">{partner.name}</h3>
             </motion.div>
           ))}
         </div>

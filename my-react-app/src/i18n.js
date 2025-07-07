@@ -1,4 +1,3 @@
-
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -7,11 +6,12 @@ const resources = {
   en: {
     translation: {
       navbar: {
-        brand: "AmClean",
+        brand: "CleanClean",
         links: {
           home: "Home",
           about: "About",
           services: "Services",
+          partners: "Partners",
           contact: "Contact"
         }
       },
@@ -22,7 +22,7 @@ const resources = {
       },
       about: {
         title: "About Us",
-        description1: "AmClean is dedicated to providing exceptional office cleaning services throughout Armenia. With years of experience and a passionate team, we ensure your workspace remains spotless and professional.",
+        description1: "CleanClean is dedicated to providing exceptional office cleaning services throughout Armenia. With years of experience and a passionate team, we ensure your workspace remains spotless and professional.",
         description2: "Our mission is to create healthy, clean environments that boost productivity and leave lasting impressions.",
         valuesTitle: "Our Values",
         values: [
@@ -77,14 +77,22 @@ const resources = {
       partners: {
         title: "Our Partners",
         items: [
-          { name: "EcoClean Supplies", description: "Sustainable cleaning products" },
-          { name: "Armenian Business Network", description: "Local business support" },
-          { name: "GreenTech Solutions", description: "Eco-friendly tech provider" }
+          { name: "ARARAT BANK" },
+          { name: "UNIBANK" },
+          { name: "PROJECT INTER-INVEST" }
         ]
       },
       contact: {
         title: "Contact Us",
-        buttonText: "Send Message"
+        buttonText: "Send Message",
+        form: {
+          name: "Your Name",
+          email: "Your Email",
+          phone: "Your Phone",
+          message: "Your Message",
+          success: "Thank you! Your message has been sent.",
+          error: "There was an error sending your message. Please try again."
+        }
       },
       footer: {
         rights: "All rights reserved.",
@@ -98,7 +106,7 @@ const resources = {
   hy: {
     translation: {
       navbar: {
-        brand: "AmClean",
+        brand: "CleanClean",
         links: {
           home: "Գլխավոր",
           about: "Մեր մասին",
@@ -114,7 +122,7 @@ const resources = {
       },
       about: {
         title: "Մեր մասին",
-        description1: "AmClean-ը նվիրված է Հայաստանում գրասենյակների բացառիկ մաքրություն ապահովելուն: Տարիների փորձով և նվիրված թիմով մենք երաշխավորում ենք Ձեր աշխատավայրի անբիծ և պրոֆեսիոնալ տեսքը:",
+        description1: "CleanClean-ը նվիրված է Հայաստանում գրասենյակների բացառիկ մաքրություն ապահովելուն: Տարիների փորձով և նվիրված թիմով մենք երաշխավորում ենք Ձեր աշխատավայրի անբիծ և պրոֆեսիոնալ տեսքը:",
         description2: "Մեր առաքելությունն է ստեղծել առողջ, մաքուր միջավայրեր, որոնք բարձրացնում են արտադրողականությունը և թողնում մնայուն տպավորություն:",
         valuesTitle: "Մեր արժեքները",
         values: [
@@ -157,7 +165,7 @@ const resources = {
             description: "Գորգերի պրոֆեսիոնալ խնամք",
             subOptions: {
               steamCleaning: { title: "Գոլորշիով մաքրում", description: "Տաք ջրով արդյունահանման մեթոդ" },
-              stainRemoval: { title: "Հաշմանդամի հեռացում", description: "Թիրախային բծերի մշակում" }
+              stainRemoval: { title: "Բծերի հեռացում", description: "Թիրախային բծերի մշակում" }
             }
           }
         }
@@ -169,14 +177,22 @@ const resources = {
       partners: {
         title: "Մեր գործընկերները",
         items: [
-          { name: "ԷկոՔլին Սուփլայս", description: "Կայուն մաքրման միջոցներ" },
-          { name: "Հայկական Բիզնես Ցանց", description: "Տեղական բիզնեսի աջակցություն" },
-          { name: "ԳրինԹեք Լուծումներ", description: "Էկո-բարեկամական տեխնոլոգիաների մատակարար" }
+          { name: "ԱՐԱՐԱՏ ԲԱՆԿ" },
+          { name: "ՅՈՒՆԻԲԱՆԿ" },
+          { name: "ՊՐՈՅԵԿՏ ԻՆՏԵՐ-ԻՆՎԵՍՏ" }
         ]
       },
       contact: {
         title: "Հետադարձ կապ",
-        buttonText: "Ուղարկել հաղորդագրություն"
+        buttonText: "Ուղարկել հաղորդագրություն",
+        form: {
+          name: "Անուն",
+          email: "Էլ․ փոստ",
+          phone: "Հեռախոս",
+          message: "Հաղորդագրություն",
+          success: "Շնորհակալություն։ Ձեր հաղորդագրությունը ուղարկված է։",
+          error: "Սխալ է տեղի ունեցել։ Խնդրում ենք փորձել կրկին։"
+        }
       },
       footer: {
         rights: "Բոլոր իրավունքները պաշտպանված են:",
@@ -190,7 +206,7 @@ const resources = {
   ru: {
     translation: {
       navbar: {
-        brand: "AmClean",
+        brand: "CleanClean",
         links: {
           home: "Главная",
           about: "О нас",
@@ -206,7 +222,7 @@ const resources = {
       },
       about: {
         title: "О нас",
-        description1: "AmClean стремится предоставлять исключительные услуги по уборке офисов по всей Армении. Благодаря многолетнему опыту и преданной команде мы гарантируем, что ваше рабочее место останется безупречным и профессиональным.",
+        description1: "CleanClean стремится предоставлять исключительные услуги по уборке офисов по всей Армении. Благодаря многолетнему опыту и преданной команде мы гарантируем, что ваше рабочее место останется безупречным и профессиональным.",
         description2: "Наша миссия — создавать здоровую, чистую среду, которая повышает производительность и оставляет неизгладимое впечатление.",
         valuesTitle: "Наши ценности",
         values: [
@@ -261,14 +277,22 @@ const resources = {
       partners: {
         title: "Наши партнеры",
         items: [
-          { name: "ЭкоКлин Сапплайс", description: "Экологичные средства для уборки" },
-          { name: "Армянская Бизнес Сеть", description: "Поддержка местного бизнеса" },
-          { name: "ГринТек Решения", description: "Поставщик экологичных технологий" }
+          { name: "Арарат Банк" },
+          { name: "Юнибанк", description: "Поддержка местного бизнеса" },
+          { name: "ПРОЕКТ ИНТЕР-ИНВЕСТ", description: "Поставщик экологичных технологий" }
         ]
       },
       contact: {
         title: "Связаться с нами",
-        buttonText: "Отправить сообщение"
+        buttonText: "Отправить сообщение",
+        form: {
+          name: "Ваше имя",
+          email: "Ваш email",
+          phone: "Ваш телефон",
+          message: "Ваше сообщение",
+          success: "Спасибо! Ваше сообщение отправлено.",
+          error: "Произошла ошибка. Пожалуйста, попробуйте еще раз."
+        }
       },
       footer: {
         rights: "Все права защищены.",
@@ -286,9 +310,14 @@ i18n
   .use(initReactI18next) 
   .init({
     resources,
-    fallbackLng: 'en', 
+    fallbackLng: 'en',
+    supportedLngs: ['en', 'hy', 'ru'],
+    detection: {
+      order: ['cookie', 'htmlTag', 'localStorage', 'path', 'subdomain'],
+      caches: ['cookie']
+    },
     interpolation: {
-      escapeValue: false 
+      escapeValue: false
     }
   });
 

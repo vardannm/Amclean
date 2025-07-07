@@ -14,7 +14,7 @@ const Footer = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="bg-gradient-to-r from-[#2A4365] to-[#38A169] text-white text-center p-6 mt-auto"
+      className="bg-gradient-to-r  from-[#01040b] to-[#173473] text-white text-center p-6 mt-auto"
     >
       <div className="container mx-auto">
         <p className="mb-2">
@@ -26,6 +26,7 @@ const Footer = () => {
               {link.name}
             </a>
           ))}
+          <p>+374 44 66 66 99</p>
         </div>
       </div>
     </motion.footer>

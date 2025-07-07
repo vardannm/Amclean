@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import data from '../data.json';
+import { useTranslation } from 'react-i18next';
 
 const ContactUs = () => {
-  const { title, buttonText } = data.contact;
+  const { t } = useTranslation();
 
   return (
     <motion.section
@@ -13,7 +13,9 @@ const ContactUs = () => {
       className="py-16 px-4 bg-[#F7FAFC]"
     >
       <div className="container mx-auto max-w-2xl">
-        <h2 className="text-4xl font-bold text-[#1A202C] mb-8 text-center">{title}</h2>
+        <h2 className="text-4xl font-bold text-[#1A202C] mb-8 text-center">
+          {t('contact.title')}
+        </h2>
         <motion.form
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -23,20 +25,20 @@ const ContactUs = () => {
           <div>
             <input
               type="text"
-              placeholder="Your Name"
+              placeholder={t('contact.form.name')}
               className="w-full p-3 rounded-lg border border-[#E2E8F0] focus:outline-none focus:ring-2 focus:ring-[#38A169]"
             />
           </div>
           <div>
             <input
               type="email"
-              placeholder="Your Email"
+              placeholder={t('contact.form.email')}
               className="w-full p-3 rounded-lg border border-[#E2E8F0] focus:outline-none focus:ring-2 focus:ring-[#38A169]"
             />
           </div>
           <div>
             <textarea
-              placeholder="Your Message"
+              placeholder={t('contact.form.message')}
               rows="5"
               className="w-full p-3 rounded-lg border border-[#E2E8F0] focus:outline-none focus:ring-2 focus:ring-[#38A169]"
             ></textarea>
@@ -46,7 +48,7 @@ const ContactUs = () => {
             whileTap={{ scale: 0.95 }}
             className="w-full p-3 bg-[#38A169] text-white rounded-lg font-semibold hover:bg-[#F6AD55] transition-colors"
           >
-            {buttonText}
+            {t('contact.buttonText')}
           </motion.button>
         </motion.form>
       </div>
