@@ -6,7 +6,7 @@ const Footer = () => {
 
   const links = Object.entries(t('footer.links', { returnObjects: true })).map(([key, name]) => ({
     name,
-    path: `#${key}`, 
+    path: `#${key}`,
   }));
 
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="bg-gradient-to-r  from-[#01040b] to-[#173473] text-white text-center p-6 mt-auto"
+      className="bg-gradient-to-r from-[#01040b] to-[#173473] text-white text-center p-6 mt-auto"
     >
       <div className="container mx-auto">
         <p className="mb-2">
@@ -26,7 +26,9 @@ const Footer = () => {
               {link.name}
             </a>
           ))}
-          <p>+374 44 66 66 99</p>
+          <a href="tel:+37444666699" className="hover:text-[#F6AD55] transition-colors">
+            +374 44 66 66 99
+          </a>
         </div>
       </div>
     </motion.footer>
