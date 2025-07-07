@@ -10,7 +10,7 @@ const AboutUs = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="py-16 px-4 bg-[#F7FAFC]"
+      className="min-h-full px-4 p-16 bg-[#F7FAFC]"
     >
       <div className="container mx-auto max-w-4xl">
         <h2 className="text-4xl font-bold text-[#1A202C] mb-8 text-center">

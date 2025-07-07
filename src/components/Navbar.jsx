@@ -34,7 +34,7 @@ const Navbar = () => {
       animate="visible"
       variants={navVariants}
       transition={{ duration: 0.5 }}
-      className="bg-gradient-to-r from-[#01040b] to-[#173473] text-white p-4 sticky top-0 z-50 shadow-lg"
+      className="bg-gradient-to-r from-[#01040b] to-[#173473] text-white p-4 sticky top-0 z-50 shadow-lg "
     >
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2 text-2xl font-bold tracking-tight hover:text-[#F6AD55] transition-colors">
