@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaGlobe } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -28,13 +28,32 @@ const Navbar = () => {
     setLangOpen(false);
   };
 
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
     <motion.nav
       initial="hidden"
       animate="visible"
       variants={navVariants}
       transition={{ duration: 0.5 }}
-      className="bg-gradient-to-r from-[#01040b] to-[#173473] text-white p-4 sticky top-0 z-50 shadow-lg "
+      className="bg-gradient-to-r from-[#01040b] to-[#173473] text-white p-4 sticky top-0 z-50 shadow-lg"
     >
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2 text-2xl font-bold tracking-tight hover:text-[#F6AD55] transition-colors">
@@ -55,7 +74,6 @@ const Navbar = () => {
             ))}
           </ul>
 
-     
           <div className="relative">
             <motion.button
               whileHover={{ scale: 1.1 }}
@@ -91,51 +109,57 @@ const Navbar = () => {
           </div>
         </div>
 
-
         <button className="md:hidden text-2xl" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
 
-
-        <motion.div
-          className="fixed inset-y-0 right-0 w-64 bg-[#2A4365] p-6 md:hidden"
-          initial="closed"
-          animate={isOpen ? 'open' : 'closed'}
-          variants={menuVariants}
-          transition={{ duration: 0.3 }}
-        >
-          <ul className="space-y-6 mt-12">
-            {Object.keys(t('navbar.links', { returnObjects: true })).map((key) => (
-              <motion.li key={key} whileHover={{ x: 10 }} onClick={() => setIsOpen(false)}>
-                <Link to={key === 'home' ? '/' : `/${key}`} className="text-lg hover:text-[#F6AD55] transition-colors">
-                  {t(`navbar.links.${key}`)}
-                </Link>
-              </motion.li>
-            ))}
-            <li className="pt-4">
-              <div className="flex items-center space-x-2">
-                <FaGlobe />
-                <span className="text-lg">Language</span>
-              </div>
-              <ul className="mt-2 space-y-2">
-                {languages.map((lang) => (
-                  <li key={lang.code}>
-                    <button
-                      onClick={() => {
-                        changeLanguage(lang.code);
-                        setIsOpen(false);
-                      }}
-                      className="w-full text-left text-lg hover:text-[#F6AD55] transition-colors flex items-center space-x-2"
-                    >
-                      <span>{lang.flag}</span>
-                      <span>{lang.name}</span>
-                    </button>
+        <AnimatePresence>
+          {isOpen && (
+            <div className="fixed inset-0 z-40 md:hidden">
+              <motion.div
+                ref={menuRef}
+                className="absolute right-0 top-0 h-full w-64 bg-[#2A4365] p-6 shadow-lg"
+                initial="closed"
+                animate="open"
+                exit="closed"
+                variants={menuVariants}
+                transition={{ duration: 0.3 }}
+              >
+                <ul className="space-y-6 mt-12">
+                  {Object.keys(t('navbar.links', { returnObjects: true })).map((key) => (
+                    <motion.li key={key} whileHover={{ x: 10 }} onClick={() => setIsOpen(false)}>
+                      <Link to={key === 'home' ? '/' : `/${key}`} className="text-lg hover:text-[#F6AD55] transition-colors">
+                        {t(`navbar.links.${key}`)}
+                      </Link>
+                    </motion.li>
+                  ))}
+                  <li className="pt-4">
+                    <div className="flex items-center space-x-2">
+                      <FaGlobe />
+                      <span className="text-lg">Language</span>
+                    </div>
+                    <ul className="mt-2 space-y-2">
+                      {languages.map((lang) => (
+                        <li key={lang.code}>
+                          <button
+                            onClick={() => {
+                              changeLanguage(lang.code);
+                              setIsOpen(false);
+                            }}
+                            className="w-full text-left text-lg hover:text-[#F6AD55] transition-colors flex items-center space-x-2"
+                          >
+                            <span>{lang.flag}</span>
+                            <span>{lang.name}</span>
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
                   </li>
-                ))}
-              </ul>
-            </li>
-          </ul>
-        </motion.div>
+                </ul>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.nav>
   );

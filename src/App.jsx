@@ -14,7 +14,7 @@ const App = () => {
   const services = t('services.items', { returnObjects: true });
   const serviceRoutes = Object.entries(services).flatMap(([serviceKey, service]) =>
     Object.entries(service.subOptions).map(([subKey]) => ({
-      path: `/services/${serviceKey}/${subKey}`,
+      path: `/services/${serviceKey.replace(/([A-Z])/g, '-$1').toLowerCase()}/${subKey.replace(/([A-Z])/g, '-$1').toLowerCase()}`,
       service: serviceKey,
       subOption: subKey,
     }))
@@ -74,6 +74,14 @@ const App = () => {
             }
           />
         ))}
+        <Route
+          path="/services/:service/:subOption"
+          element={
+            <Layout>
+              <ServiceDetail />
+            </Layout>
+          }
+        />
       </Routes>
     </Router>
   );

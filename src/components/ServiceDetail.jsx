@@ -16,10 +16,7 @@ const ServiceDetail = () => {
   const title = t(titleKey, { defaultValue: 'Service Not Found' });
   const description = t(descKey, { defaultValue: 'Sorry, this service detail is not available.' });
 
-  console.log('Params:', { service, subOption });
-  console.log('Normalized:', { normalizedService, normalizedSubOption });
-  console.log('Translation Keys:', { titleKey, descKey });
-  console.log('Translated:', { title, description });
+
 
   const pageVariants = {
     hidden: { opacity: 0, y: 20 },

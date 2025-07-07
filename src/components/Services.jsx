@@ -77,7 +77,7 @@ const services = Object.entries(t('services.items', { returnObjects: true })).ma
                       <Link
                         key={subOption.title}
                         to={subOption.path}
-                        className="block p-2 bg-[#F6AD55]/10 rounded-md hover:bg-[#F6AD55]/20 transition-colors text-[#1A202C]"
+                        className="block p-2 bg-sky-50 rounded-md hover:bg-sky-100 transition-colors text-[#1A202C]"
                       >
                         <span className="font-medium">{subOption.title}</span>
                         <p className="text-sm text-[#718096]">{subOption.description}</p>
